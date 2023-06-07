@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 
-# uppercase: a function that prints a string in uppercase.
+"""
+uppercase - a function that prints a string in uppercase
+followed by a new line.
+"""
+
 
 def uppercase(str):
     for char in str:
