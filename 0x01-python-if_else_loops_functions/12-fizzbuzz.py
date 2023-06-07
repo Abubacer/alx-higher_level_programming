@@ -2,9 +2,9 @@
 
 """
 fizzbuzz - a function that prints the numbers from 1 to 100
-separated by a space it prints For multiples of three Fizz
-instead of the number and for multiples of five Buzz and for
-multiples of three and five, print FizzBuzz
+separated by a space. It prints instead of the number : for
+multiples of three Fizz and for multiples of five Buzz, and for
+multiples of three and five FizzBuzz
 """
 
 

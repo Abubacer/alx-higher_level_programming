@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# uppercase - a function that prints a string in uppercase.
 
 def uppercase(str):
     for char in str:
