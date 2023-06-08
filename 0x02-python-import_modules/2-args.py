@@ -18,4 +18,3 @@ if __name__ == "__main__":
         print("{} argument: ".format(argc))
         for y, argv in enumerate(args_list, start=1):
             print("{}: {}".format(y, argv))
-
