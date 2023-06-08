@@ -11,10 +11,10 @@ if __name__ == "__main__":
     if argc == 0:
         print("{} arguments.".format(argc))
     elif argc > 1:
-        print("{} arguments: ".format(argc))
+        print("{} arguments:".format(argc))
         for i, argv in enumerate(args_list, start=1):
             print("{}: {}".format(i, argv))
     elif argc == 1:
-        print("{} argument: ".format(argc))
+        print("{} argument:".format(argc))
         for y, argv in enumerate(args_list, start=1):
             print("{}: {}".format(y, argv))
