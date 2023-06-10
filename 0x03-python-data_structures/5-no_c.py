@@ -1,6 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 def no_c(my_string):
     # a function that removes all characters c and C from a string.
-    new_str = [ch for ch in my_string if ch != 'c' and ch != 'C']
+    char_filter = 'cC'
+    new_str = [char for char in my_string if char not in char_filter]
     return ("".join(new_str))
