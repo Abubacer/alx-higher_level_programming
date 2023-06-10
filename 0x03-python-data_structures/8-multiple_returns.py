@@ -5,5 +5,5 @@ def multiple_returns(sentence):
     # and its first character
     # if the string is empty the first character is set to None.
     if sentence == "":
-        return (0,None)
+        return (0, None)
     return len(sentence), sentence[0]
