@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""multiple_returns - a function that returns a tuple
-with the length of a string and its first character.
-"""
-
 
 def multiple_returns(sentence):
+    # a function that returns a tuple with the length of a string
+    # and its first character
+    # if the string is empty the first character is set to None.
     if sentence == "":
-        return None
+        return (0,None)
     return len(sentence), sentence[0]
