@@ -1,10 +1,8 @@
-
 ![My GitHub avatar](https://avatars.githubusercontent.com/u/13408012?s=200&v=4)
 
 # 0x03-Python - Data Structures: Lists, Tuples
 
-Python is awesome
-
+Python is awesome :nerd_face:
 ## Learning Objectives
 
 At the end of this project, we are expected to be able to explain to anyone, without the help of Google:
@@ -53,9 +51,8 @@ guillaume@ubuntu:~/0x03$
 1. Initiates a loop that iterates over each number in the list.
 2.  Print each element in the list and format each element as an int using the format() method with the :d format specifier.
 
-#### The source code
-[0-print_list_integer.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/0-print_list_integer.py)
----
+#### The source code: [0-print_list_integer.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/0-print_list_integer.py)
+***
 ### 1-element_at.py
 Write a function that retrieves an element from a list like in C.
 
@@ -83,9 +80,8 @@ guillaume@ubuntu:~/0x03$
 2. If either condition is true, it means the index is invalid and step 2 is true: return None.
 3. If step 2 is false: return the list with the value at the specified index.
 
-#### The source code
-[1-element_at.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/1-element_at.py)
----
+#### The source code: [1-element_at.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/1-element_at.py)
+***
 ### 2-replace_in_list.py
 Write a function that replaces an element of a list at a specific position (like in C).
 
@@ -119,9 +115,8 @@ guillaume@ubuntu:~/0x03$
 3. If step 2 is false:  set the value of the var "element" to the element at the specified index in the list this will replaces the existing value at that index with the new value.
 4. Return the list with the updated value at the specified index.
 
-#### The source code
-[2-replace_in_list.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/2-replace_in_list.py)
-
+#### The source code: [2-replace_in_list.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/2-replace_in_list.py)
+***
 ### 3-print_reversed_list_integer.py
 Write a function that prints all integers of a list, in reverse order.
 
@@ -154,9 +149,8 @@ guillaume@ubuntu:~/0x03$
 3. Iterates over each element in the list
 4. print and format each element as an int using the format() method with the :d format specifier.
 
-#### The source code
-[3-print_reversed_list_integer.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/3-print_reversed_list_integer.py)
----
+#### The source code: [3-print_reversed_list_integer.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/3-print_reversed_list_integer.py)
+***
 
 ### 4-new_in_list.py
 Write a function that prints all integers of a list.
@@ -187,9 +181,8 @@ guillaume@ubuntu:~/0x03$
 3. If either condition is true, it means the index is invalid and step 2 is true: return the copy of the list without making any changes.
 4. If step 2 is false:  set the value of the var "element" to the element at the specified index in the copy this will replaces the existing value at that index with the new value.
 5. Return the copy of the list with the updated value at the specified index.
-#### The source code
-[4-new_in_list.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/4-new_in_list.py)
-___
+#### The source code: [4-new_in_list.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/4-new_in_list.py)
+***
 ### 5-no_c.py
 Write a function that removes all characters c and C from a string.
 
@@ -218,9 +211,8 @@ guillaume@ubuntu:~/0x03$
 3. Filter out the characters 'c' and 'C' from the original string.
 4.  Joins the elements in list into a new single string using the join() and put the "" separator between the elements
 5. Return the new string
-#### The source code
-[5-no_c.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/5-no_c.py)
-
+#### The source code: [5-no_c.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/5-no_c.py)
+***
 
 ### 6-print_matrix_integer.py
 Write a function that prints a matrix of integers.
@@ -260,9 +252,8 @@ guillaume@ubuntu:~/0x03$
 2. Iterates over each element in the row and format each element as an int using the format() method with the :d format specifier.
 3. Concatenates the elements of the iterator into a single string, using join() and the space " " as a separator.
 4. Print the string as row of the matrix with elements separated by spaces.
-#### The source code
-[6-print_matrix_integer.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/6-print_matrix_integer.py)
----
+#### The source code: [6-print_matrix_integer.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/6-print_matrix_integer.py)
+***
 ### 7-add_tuple.py
 Write a function that adds 2 tuples.
 
@@ -302,9 +293,8 @@ guillaume@ubuntu:~/0x03$
 5. Creates a new tuple 'B' and repeat the step 1, 2, 3
 6. Calculates the sum of the 'A' and 'B' by performing element-wise addition to generate a new tuple
 5. Return the sum
-#### The source code
-[7-add_tuple.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/7-add_tuple.py)
----
+#### The source code:  [7-add_tuple.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/7-add_tuple.py)
+***
 ### 8-multiple_returns.py
 Write a function that returns a tuple with the length of a string and its first character.
 
@@ -329,10 +319,9 @@ guillaume@ubuntu:~/0x03$
 1. Check if the string is empty.
 2. If the condition is true: return None and set the first character to None.
 3. Otherwise, return the length of a string and its first character.
-#### The source code
-[8-multiple_returns.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/8-multiple_returns.py)
+#### The source code: [8-multiple_returns.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/8-multiple_returns.py)
 
----
+***
 ### 9-max_integer.py
 Write a function that finds the biggest integer of a list.
 
@@ -362,9 +351,8 @@ guillaume@ubuntu:~/0x03$
 4. Compare each element with the current value of the variable from step 2.
 5. If an element in the list is greater than the current value of the variable, it updates to the new value of the element.
 6. Return the value which represents the maximum value in the list.
-#### The source code
-[9-max_integer.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/9-max_integer.py)
----
+#### The source code: [9-max_integer.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/9-max_integer.py)
+***
 ### 10-divisible_by_2.py
 
 Write a function that finds all multiples of 2 in a list.
@@ -404,9 +392,8 @@ guillaume@ubuntu:~/0x03$
 4. If it is true: the number in the list is an even number 
 5. If it is false: the number in the list is an odd number.
 6. Return the result with the corresponding boolean values true or false.
-#### The source code
-[10-divisible_by_2.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/10-divisible_by_2.py)
----
+#### The source code: [10-divisible_by_2.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/10-divisible_by_2.py)
+***
 ### 11-delete_at.py
 Write a function that deletes the item at a specific position in a list.
 
@@ -436,9 +423,8 @@ guillaume@ubuntu:~/0x03$
 2. If either condition is true, it means the index is invalid and step 2 is true: return the list without making any changes
 3. If step 2 is false:  delete the value of the element at the specified index in the list using del().
 4. Return the list with the updated value at the specified index.
-#### The source code
-[11-delete_at.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/11-delete_at.py)
----
+#### The source code: [11-delete_at.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/11-delete_at.py)
+***
 ### 12-switch.py
 Complete the source code in order to switch value of a and b
 
@@ -454,16 +440,15 @@ guillaume@ubuntu:~/py/0x03$
 ```
 #### The execution flow
 1. Use tuple packing and unpacking to swap the values of a and b. The values of b and a are packed into a tuple (b, a), and then unpacked back into the variables a and b,  swapping their values.
-#### The source code
-[12-switch.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/12-switch.py)
----
+#### The source code: [12-switch.py](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/12-switch.py)
+***
 ### 13-is_palindrome.c
 Write a function in C that checks if a singly linked list is a palindrome.
 
 - Prototype: int is_palindrome(listint_t **head);
 - Return: 0 if it is not a palindrome, 1 if it is a palindrome
 - An empty list is considered a palindrome
-- You can find the source code here: [13-main.c](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/13-main.c) [linked_lists.c](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/linked_lists.c)[lists.h](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/lists.h)
+- You can find the source code here: [13-main.c](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/13-main.c)  [linkedlists.c](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/linked_lists.c)  [lists.h](https://github.com/Abubacer/alx-higher_level_programming/blob/2b680d408cc0bcd5c1d30d18cfad89a818eabcfc/0x03-python-data_structures/lists.h)
 ```C
 carrie@ubuntu:0x03$ gcc -Wall -Werror -Wextra -pedantic 13-main.c linked_lists.c 13-is_palindrome.c -o palindrome
 carrie@ubuntu:0x03$ ./palindrome
@@ -492,10 +477,7 @@ carrie@ubuntu:0x03$
 9. Using a while loop the function compare the corresponding nodes of the splitted two lists.
 10. If the data values of the nodes are equal, it moves to the next pair of nodes. otherwise it immediately returns 0 indicating that the list is not a palindrome.
 11. Return 1 indicating that the list is a palindrome, If the loop completes without any mismatches.
-
-#### The source code
-[13-is_palindrome.c](https://github.com/Abubacer/alx-higher_level_programming/blob/e1b12857e8b6d42864c6412b57e96db36fd20713/0x03-python-data_structures/13-is_palindrome.c)
-
-## Thank you
-
+#### The source code: [13-is_palindrome.c](https://github.com/Abubacer/alx-higher_level_programming/blob/e1b12857e8b6d42864c6412b57e96db36fd20713/0x03-python-data_structures/13-is_palindrome.c)
+***
+Thank you :heart:
 
