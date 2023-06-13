@@ -475,7 +475,7 @@ carrie@ubuntu:0x03$
 7. Using a while loop the function compare the corresponding nodes of the list two halves.
 8. Return 0 If at any point the values differ, it means the list is not a palindrome.
 9. Return 1 indicating that the list is a palindrome, If the loop completes without any mismatches.
-#### The source code: [13-is_palindrome.c](https://github.com/Abubacer/alx-higher_level_programming/blob/a5e9a8b28d85cdd93e2338e4bc5b08f4927ec43b/0x03-python-data_structures/13-is_palindrome.c)
+#### The source code: [13-is_palindrome.c](0x03-python-data_structures/13-is_palindrome.c)
 ***
 Thank you :heart:
 
