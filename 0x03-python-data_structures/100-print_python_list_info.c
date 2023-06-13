@@ -1,5 +1,5 @@
 #include <Python.h>
-
+#include <stdio.h>
 /**
  * print_python_list_info - function that prints some basic info
  * about Python lists.
@@ -10,15 +10,18 @@
 
 void print_python_list_info(PyObject *p)
 {
-	Py_ssize_t py_size = PySequence_Size(p);
-	Py_ssize_t py_size = item;
+	Py_ssize_t list_size;
 
-	printf("[*] Size of the Python List = %zd\n", py_size);
+	list_size = PySequence_Size(p);
+	Py_ssize_t item;
 
-	for (item = 0 ; item < py_size ; item++)
+	printf("[*] Size of the Python List = %zd\n", list_size);
+
+	for (item = 0 ; item < list_size ; item++)
 	{
-		PyObject *obj = PySequence_GetItem(p, i);
+		PyObject *obj = PySequence_GetItem(p, item);
 
-		printf("Element %zd: %s\n", i, Py_TYPE(obj)->tp_name);
+		printf("Element %zd: %s\n", item, Py_TYPE(obj)->tp_name);
+		Py_DECREF(obj);
 	}
 }
