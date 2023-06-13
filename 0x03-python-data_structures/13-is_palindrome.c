@@ -32,8 +32,8 @@ listint_t *reverse_list(listint_t *head)
  * @head: A double pointer to head of linked list.
  * Return: 1 if the linked list is a palindrome or 0 if it is not.
  *
- * Description: the function finds the middle of the linked list using
- * the slow and fast pointers technique, reverses the second half and
+ * Description: The function finds the middle of the linked list using
+ * a slow and fast pointers technique, reverses the second half and
  * finally compare the corresponding nodes in two halves of the list
  * and return whether the list is a palindrome or not.
  */
