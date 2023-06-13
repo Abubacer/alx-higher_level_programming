@@ -468,15 +468,13 @@ carrie@ubuntu:0x03$
 #### The execution flow
 1. Declare four pointers.
 2. Check if the linked list is empty or contains only one node. If true: return 1 indicating a palindrome.
-3. Initialize two pointers to the head of the list.
+3. Initialize the tree pointers to the input head of the list.
 4. Using a while loop find the midle of the linked list using "slow and fast pointers" algorithm. The loop continues until the slow pointer reaches the end of the list.
-5. If the number of nodes in the list is even the slow pointer will be at the middle node, if it is odd the slow pointer will be at the node just after the middle.
-6. Set the fast pointer(which is at the end of the first half of the list) to NULL. This splits the list into two separate lists.
-7. Initialize two new pointers. the first to the head and a second to the appropriate starting point for the second half of the list. 
-8. The second list is reversed using reverse_list() and the first list is set to the original first half of the list.
-9. Using a while loop the function compare the corresponding nodes of the splitted two lists.
-10. If the data values of the nodes are equal, it moves to the next pair of nodes. otherwise it immediately returns 0 indicating that the list is not a palindrome.
-11. Return 1 indicating that the list is a palindrome, If the loop completes without any mismatches.
+5. After the loop, if the fast pointer is not NULL, it means the list has an odd number of nodes. In such a case, the slow pointer is moved one step forward to skip the middle element, and adjusts the slow pointer to point to the beginning of the second half of the list.
+6. The function calls the reverse_list() function, passing the slow pointer as the input, to reverse the second half of the list. The reversed list is stored in the fourth pointer.
+7. Using a while loop the function compare the corresponding nodes of the splitted two lists.
+8. Return 0 If at any point the values differ, it means the list is not a palindrome.
+9. Return 1 indicating that the list is a palindrome, If the loop completes without any mismatches.
 #### The source code: [13-is_palindrome.c](https://github.com/Abubacer/alx-higher_level_programming/blob/e1b12857e8b6d42864c6412b57e96db36fd20713/0x03-python-data_structures/13-is_palindrome.c)
 ***
 Thank you :heart:
