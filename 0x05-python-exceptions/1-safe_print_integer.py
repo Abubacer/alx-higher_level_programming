@@ -5,7 +5,6 @@ def safe_print_integer(value):
     # Returns True if the value is an integer, Otherwise, returns False.
     try:
         print("{:d}".format(value))
+        return True
     except ValueError:
         return False
-    else:
-        return True
