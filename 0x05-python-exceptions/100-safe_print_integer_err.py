@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def safe_print_integer_err(value):
     # a function that prints an integer with error message.
     # Returns True if value  is an integer, Otherwise, returns False.
