@@ -3,7 +3,7 @@
 def magic_calculation(a, b):
     #  a function that calculates a and b and returns the result.
     result = 0
-    for i in range(3):
+    for i in range(1, 3):
         try:
             if i > a:
                 raise Exception("Too far")
