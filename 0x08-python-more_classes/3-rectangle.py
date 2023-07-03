@@ -83,4 +83,13 @@ class Rectangle:
         """
         if self.__width == 0 or self.height == 0:
             return 0
-        return ((self.__width * 2) + (self.__height * 2)) 
+        return ((self.__width * 2) + (self.__height * 2))
+
+    def __str__(self):
+        """ Returns the rectangle representation with the character #.
+        If width or height is equal to 0, return an empty string.
+        """
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+        print_rectangle = ["#" * self.width] * self.__height
+        return ("\n".join(print_rectangle))
