@@ -114,6 +114,7 @@ class Rectangle:
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """ Returns the biggest rectangle based on the area value.
 
@@ -142,4 +143,4 @@ class Rectangle:
         Args:
             size (int): The width and height of new rectangle.
         """
-        return (cls(size, size))
+        return cls(size, size)
