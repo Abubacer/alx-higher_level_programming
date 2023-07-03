@@ -142,4 +142,4 @@ class Rectangle:
         Args:
             size (int): The width and height of new rectangle.
         """
-        return cls(size, size)
+        return (cls(size, size))
