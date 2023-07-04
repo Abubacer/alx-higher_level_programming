@@ -66,11 +66,3 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
-    def __repr__(self):
-        """ Returns the string representation of the rectangle.
-
-        Returns:
-            str: The string representation.
-        """
-        pass
