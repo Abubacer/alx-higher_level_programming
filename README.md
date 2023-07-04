@@ -5,5 +5,12 @@ During this course, we learn the basics of Python programming.
 
 ## Content
 
-	* Python - Hello, World
-
+- 0x00-python-hello_world              
+- 0x01-python-if_else_loops_functions
+- 0x02-python-import_modules
+- 0x03-python-data_structures          
+- 0x04-python-more_data_structures
+- 0x05-python-exceptions
+- 0x06-python-classes
+- 0x08-python-more_classes
+- 0x09-python-everything_is_object
