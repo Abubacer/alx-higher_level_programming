@@ -1,0 +1,48 @@
+5-text_indentation.py
+=====================
+
+This module defines a function `text_indentation` that indents the given text.
+
+Using ``text_indentation``
+----------------------
+
+The input text is the text to be indented.
+
+Examples:
+---------
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("python?")
+python?
+
+>>> text_indentation("python.")
+python.
+
+>>> text_indentation("python:")
+python:
+
+>>> text_indentation(" python")
+python
+>>> text_indentation("python ")
+python
+
+
+>>> text_indentation(" Woah now. This is
+Invalid Input Error
+-------------------
+
+The size must be an integer otherwise, a TypeError is raised.
+If size is less than Zero, a ValueError is raised.
+If size is a float and is less than Zero, a TypeError is raised.
+
+Examples:
+---------
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+TypeError: text must be a string
