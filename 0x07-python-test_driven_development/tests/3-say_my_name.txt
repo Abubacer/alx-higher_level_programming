@@ -3,11 +3,11 @@
 
 This module defines a function `say_my_name` that Print the name based on the provided first name and last name.
 
-Usage
-=====
+Using ``say_my_name``
+---------------------
 
 First name and last name provided.
-First name provided, last name empty
+First name provided, last name empty.
 
 Examples:
 ---------
@@ -17,17 +17,24 @@ Examples:
 >>> say_my_name("John", "Doe")
 My name is John Doe
 
-First name provided, last name empty
->>> say_my_name("Alice")
-My name is Alice
+>>> say_my_name("Bob")
+My name is Bob 
 
 Invalid Input Error
-===================
+-------------------
 
 The function first_name and last_name must be strings otherwise, a TypeError is raised.
 
 Examples:
 ---------
+
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+>>> say_my_name("name", "name", "name")
+Traceback (most recent call last):
+TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
 
 >>> say_my_name(123)
 Traceback (most recent call last):
