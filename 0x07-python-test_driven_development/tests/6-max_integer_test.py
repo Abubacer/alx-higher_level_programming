@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-Module: 6-max_integer_test
+"""Unittest for max_integer([..])
 
 This module contains unittests for the max_integer function.
 
@@ -16,7 +15,7 @@ To run the unit tests, execute this script directly.
 Author: Aziz Belkharmoudi
 """
 import unittest
-from max_integer import max_integer
+max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
