@@ -1,7 +1,7 @@
-0-add_integer.py
-================
+2-matrix_divided.py
+===================
 
-This module defines a a function `matrix_divided()` that divides all elements of a matrix.
+This module defines a function `matrix_divided()` that divides all elements of a matrix.
 
 Usage
 =====

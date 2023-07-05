@@ -1,0 +1,46 @@
+3-say_my_name.py
+================
+
+This module defines a function `say_my_name` that Print the name based on the provided first name and last name.
+
+Usage
+=====
+
+First name and last name provided.
+First name provided, last name empty
+
+Examples:
+---------
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("John", "Doe")
+My name is John Doe
+
+First name provided, last name empty
+>>> say_my_name("Alice")
+My name is Alice
+
+Invalid Input Error
+===================
+
+The function first_name and last_name must be strings otherwise, a TypeError is raised.
+
+Examples:
+---------
+
+>>> say_my_name(123)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("Jane", 456)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+>>> say_my_name(["John"])
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("Jane", ["Doe"])
+Traceback (most recent call last):
+TypeError: last_name must be a string
