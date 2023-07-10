@@ -26,6 +26,16 @@ Test: common output
 >>>
 
 
+Test NameError: not-defined object
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list2.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'my_list2' is not defined
+>>>
+
+
 Test: A list
 
 >>> a = [1, 9, 4]
@@ -81,7 +91,7 @@ test: Negative numbers
 >>>
 
 
-Test: Object has no attribute
+Test AttributeError: Object has no attribute
 
 >>> my_list = [1, 2, 3]
 >>> my_list.print_sorted()
@@ -89,15 +99,4 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 AttributeError: 'list' object has no attribute 'print_sorted'
 >>>
-
-
-Test: Not-defined object
-
->>> MyList = __import__('1-my_list').MyList
->>> my_list2.print_sorted()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: name 'my_list2' is not defined
->>>
-
 
