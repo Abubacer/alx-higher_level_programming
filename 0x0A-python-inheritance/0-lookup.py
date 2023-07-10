@@ -1,4 +1,6 @@
 #!/usr/bin/python
+"""Define an object attributes and methods lookup function.
+"""
 
 
 def lookup(obj):
