@@ -1,0 +1,204 @@
+#!/usr/bin/python3
+"""Unittest for the Base class"""
+import unittest
+import json
+import csv
+from models.rectangle import Rectangle
+from models.square import Square
+from models.base import Base
+
+
+class TestBase(unittest.TestCase):
+    """
+    Unittest and testcase for the base class.
+    """
+    def test_constructor_id(self):
+        """
+        Test the constructor when id is given.
+        """
+        obj = Base(10)
+        self.assertEqual(obj.id, 10)
+
+    def test_constructor_without_id(self):
+        """
+        Test the constructor when id is not given.
+        """
+        obj1 = Base()
+        obj2 = Base()
+        self.assertEqual(obj1.id, 1)
+        self.assertEqual(obj2.id, 2)
+
+    def test_constructor_negative_id(self):
+        """
+        Test the constructor when a negative id is given.
+        """
+        obj = Base(-5)
+        self.assertEqual(obj.id, -5)
+
+    def test_constructor_zero_id(self):
+        """
+        Test the constructor when a zero id is given.
+        """
+        obj = Base(0)
+        self.assertEqual(obj.id, 0)
+
+    def test_to_json_string(self):
+        """
+        Test case for to_json_string method.
+        """
+        # Test with valid list of dictionaries
+        rectangles = [Rectangle(1, 2), Rectangle(3, 4)]
+        json_string = Base.to_json_string([rect.to_dictionary() for rect in rectangles])
+        expected_json = json.dumps([rect.to_dictionary() for rect in rectangles])
+        self.assertEqual(json_string, expected_json)
+
+        # Test with empty list
+        json_string = Base.to_json_string([])
+        self.assertEqual(json_string, "[]")
+
+        # Test with None
+        json_string = Base.to_json_string(None)
+        self.assertEqual(json_string, "[]")
+
+    def test_save_to_file(self):
+        """
+        Test case for save_to_file method.
+        """
+        # Test with valid list of objects
+        rectangles = [Rectangle(1, 2), Rectangle(3, 4)]
+        Base.save_to_file(rectangles)
+        with open("Rectangle.json", "r") as file:
+            json_data = file.read()
+            actual_data = json.loads(json_data)
+            expected_data = [rect.to_dictionary() for rect in rectangles]
+            self.assertEqual(actual_data, expected_data)
+
+        # Test with empty list
+        Base.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            json_data = file.read()
+            actual_data = json.loads(json_data)
+            self.assertEqual(actual_data, [])
+
+        # Test with None
+        Base.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            json_data = file.read()
+            actual_data = json.loads(json_data)
+            self.assertEqual(actual_data, [])
+
+    def test_from_json_string(self):
+        """
+        Test case for from_json_string method.
+        """
+        # Test with valid JSON string
+        json_data = '[{"id": 1, "width": 2, "height": 3}, {"id": 4, "width": 5, "height": 6}]'
+        rectangles = Base.from_json_string(json_data)
+        expected_rectangles = [Rectangle(2, 3, id=1), Rectangle(5, 6, id=4)]
+        for rect, expected_rect in zip(rectangles, expected_rectangles):
+            self.assertEqual(rect.to_dictionary(), expected_rect)
+
+        # Test with empty list
+        rectangles = Base.from_json_string("[]")
+        self.assertEqual(rectangles, [])
+
+        # Test with None
+        rectangles = Base.from_json_string(None)
+        self.assertEqual(rectangles, [])
+
+    def test_create(self):
+        """
+        Test case for create method.
+        """
+        # Test with Rectangle class
+        rect_dict = {"id": 1, "width": 2, "height": 3}
+        rectangle = Rectangle.create(**rect_dict)
+        expected_rectangle = Rectangle(2, 3, id=1)
+        self.assertEqual(rectangle.to_dictionary(), expected_rectangle.to_dictionary())
+
+        # Test with Square class
+        square_dict = {"id": 2, "size": 4}
+        square = Square.create(**square_dict)
+        expected_square = Square(4, id=2)
+        self.assertEqual(square.to_dictionary(), expected_square.to_dictionary())
+
+        # Test with empty dictionary
+        empty_dict = {}
+        instance = Base.create(**empty_dict)
+        self.assertIsNone(instance)
+
+    def test_load_from_file(self):
+        """
+        Test case for load_from_file method.
+        """
+        # Test with existing file
+        rectangles = [Rectangle(1, 2), Rectangle(3, 4)]
+        Base.save_to_file(rectangles)
+        loaded_rectangles = Base.load_from_file()
+        for rect, loaded_rect in zip(rectangles, loaded_rectangles):
+            self.assertEqual(rect.to_dictionary(), loaded_rect.to_dictionary())
+
+        # Test with non-existing file
+        loaded_rectangles = Base.load_from_file()
+        self.assertEqual(loaded_rectangles, [])
+
+    def test_save_to_file_csv(self):
+        """
+        Test case for save_to_file_csv method.
+        """
+        # Test with valid list of objects
+        rectangles = [Rectangle(1, 2), Rectangle(3, 4)]
+        Base.save_to_file_csv(rectangles)
+        with open("Rectangle.csv", "r") as file:
+            csv_data = file.read()
+            expected_csv = "id,width,height,x,y\n1,1,2,0,0\n2,3,4,0,0\n"
+            self.assertEqual(csv_data, expected_csv)
+
+        # Test with empty list
+        Base.save_to_file_csv([])
+        with open("Rectangle.csv", "r") as file:
+            csv_data = file.read()
+            self.assertEqual(csv_data, "")
+
+        # Test with None
+        Base.save_to_file_csv(None)
+        with open("Rectangle.csv", "r") as file:
+            csv_data = file.read()
+            self.assertEqual(csv_data, "")
+
+    def test_load_from_file_csv(self):
+        """
+        Test case for load_from_file_csv method.
+        """
+        # Test with existing file
+        rectangles = [Rectangle(1, 2), Rectangle(3, 4)]
+        Base.save_to_file_csv(rectangles)
+        loaded_rectangles = Base.load_from_file_csv()
+        for rect, loaded_rect in zip(rectangles, loaded_rectangles):
+            self.assertEqual(rect.to_dictionary(), loaded_rect.to_dictionary())
+
+        # Test with non-existing file
+        loaded_rectangles = Base.load_from_file_csv()
+        self.assertEqual(loaded_rectangles, [])
+
+    def test_get_fieldnames(self):
+        """
+        Test case for get_fieldnames method.
+        """
+        # Test with Rectangle class
+        fieldnames = Rectangle.get_fieldnames()
+        expected_fieldnames = ["id", "width", "height", "x", "y"]
+        self.assertEqual(fieldnames, expected_fieldnames)
+
+        # Test with Square class
+        fieldnames = Square.get_fieldnames()
+        expected_fieldnames = ["id", "size", "x", "y"]
+        self.assertEqual(fieldnames, expected_fieldnames)
+
+        # Test with unknown class
+        fieldnames = Base.get_fieldnames()
+        self.assertEqual(fieldnames, [])
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -39,7 +39,6 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = value
         self.height = value
-      
 
     def __str__(self):
         """Returns a string string representation of the rectangle."""
