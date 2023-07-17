@@ -142,8 +142,10 @@ class Base:
                 else:
                     fieldnames = ["id", "size", "x", "y"]
                 reader = csv.DictReader(file, fieldnames=fieldnames)
-                listdicts = [dict([k, int(v)] for k, v in d.items())
-                              for d in reader]
+                listdicts = [
+                    dict([k, int(v)] for k, v in d.items())
+                    for d in reader
+                ]
                 return [cls.create(**d) for d in listdicts]
         except FileNotFoundError:
             return []
