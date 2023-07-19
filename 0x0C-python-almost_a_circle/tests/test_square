@@ -1,1 +1,143 @@
 #!/usr/bin/python3
+"""Unittest for testing the square class.
+"""
+import unittest
+import sys
+import io
+from models.square import Square
+
+
+class TestSquare(unittest.TestCase):
+    """Unittest, testcase for testing the square class."""
+    def test_size_property(self):
+        s = Square(5)
+        self.assertEqual(s.size, 5)
+
+    def test_size_setter(self):
+        s = Square(5)
+        s.size = 10
+        self.assertEqual(s.size, 10)
+        self.assertEqual(s.width, 10)
+        self.assertEqual(s.height, 10)
+
+    def test_size_setter_invalid_type(self):
+        s = Square(5)
+        with self.assertRaises(TypeError):
+            s.size = "invalid"
+
+    def test_size_setter_invalid_value(self):
+        s = Square(5)
+        with self.assertRaises(ValueError):
+            s.size = -5
+
+    @staticmethod
+    def capture_stdout(Square, cls_method):
+        """Returns the text printed to stdout.
+
+        Args:
+            square: The Square to print to stdout.
+            cls_method (str): The method to run on rect.
+
+        Returns:
+            The text printed to stdout.
+        """
+        capture = io.StringIO()
+        sys.stdout = capture
+        if cls_method == "print":
+            print(Square)
+        else:
+            Square.display()
+        sys.stdout = sys.__stdout__
+        return capture
+
+    def test_str_method_print_width_height(self):
+        s = Square(5)
+        capture = TestSquare.capture_stdout(s, "print")
+        correct = "[Square] ({}) 0/0 - 5\n".format(s.id)
+        self.assertEqual(correct, capture.getvalue())
+
+    def test_str_method_width_height_x(self):
+        s = Square(5, 1)
+        correct = "[Square] ({}) 1/0 - 5".format(s.id)
+        self.assertEqual(correct, s.__str__())
+
+    def test_str_method_width_height_x_y(self):
+        s = Square(5, 2, 4)
+        correct = "[Square] ({}) 2/4 - 5".format(s.id)
+        self.assertEqual(correct, str(s))
+
+    def test_str_method_width_height_x_y_id(self):
+        s = Square(5, 2, 4, 7)
+        self.assertEqual("[Square] (7) 2/4 - 5", str(s))
+
+    def test_str_method_changed_attributes(self):
+        s = Square(7, 0, 0, [4])
+        s.size = 15
+        s.x = 8
+        s.y = 10
+        self.assertEqual("[Square] ([4]) 8/10 - 15", str(s))
+
+    def test_str_method_one_arg(self):
+        s = Square(1, 2, 3, 4, 5)
+        with self.assertRaises(TypeError):
+            s.__str__(1)
+
+    def test_display_width_height(self):
+        s = Square(2)
+        capture = TestSquare.capture_stdout(s, "display")
+        self.assertEqual("##\n##\n", capture.getvalue())
+
+    def test_display_width_height_x(self):
+        s = Square(3, 1)
+        capture = TestSquare.capture_stdout(s, "display")
+        self.assertEqual(" ###\n ###\n ###\n", capture.getvalue())
+
+    def test_display_width_height_y(self):
+        s = Square(4, 0, 1)
+        capture = TestSquare.capture_stdout(s, "display")
+        display = "\n####\n####\n####\n####\n"
+        self.assertEqual(display, capture.getvalue())
+
+    def test_display_width_height_x_y(self):
+        s = Square(2, 3, 2)
+        capture = TestSquare.capture_stdout(s, "display")
+        display = "\n\n   ##\n   ##\n"
+        self.assertEqual(display, capture.getvalue())
+
+    def test_display_one_arg(self):
+        s = Square(5, 2, 4, 7)
+        with self.assertRaises(TypeError):
+            s.display(1)
+
+    def test_update_method_args(self):
+        s = Square(5)
+        s.update(2, 10, 4, 6)
+        self.assertEqual(str(s), "[Square] (2) 4/6 - 10")
+
+    def test_update_method_kwargs(self):
+        s = Square(5)
+        s.update(size=10, x=4, y=6)
+        self.assertEqual(str(s), "[Square] (1) 4/6 - 10")
+
+    def test_update_method_invalid_args(self):
+        s = Square(5)
+        with self.assertRaises(ValueError):
+            s.update(2, 10, 4, 6, 8)
+
+    def test_to_dictionary_method_output(self):
+        s1 = Square(10, 2, 3, 1)
+        s2 = Square(5, 9, 1, 2)
+        s3 = Square(10, 4, 1, 2)
+
+        correct = {'id': 1, 'size': 10, 'x': 2, 'y': 3}
+        self.assertDictEqual(correct, s1.to_dictionary())
+
+        s2.update(**s1.to_dictionary())
+        self.assertNotEqual(s1, s2)
+
+        with self.assertRaises(TypeError):
+            s3.to_dictionary(1)
+
+
+if __name__ == '__main__':
+    unittest.main()
