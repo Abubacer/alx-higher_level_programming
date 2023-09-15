@@ -23,7 +23,7 @@ def list_states(user, password, database, state):
 
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states \
-                    WHERE name LIKE '{}' \
+                    WHERE name LIKE BINARY '{}' \
                     ORDER BY states.id ASC".format(state))
 
     states = cursor.fetchall()
