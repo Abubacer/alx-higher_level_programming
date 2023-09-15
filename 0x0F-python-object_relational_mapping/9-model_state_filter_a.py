@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This is a script that lists the first State objects
-from the database hbtn_0e_6_usa.
+This is a script that lists all State objects that contain
+the letter a from the database hbtn_0e_6_usa.
 """
 
 import sys
@@ -10,21 +10,19 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-def list_first(db_url):
+def list_states(db_url):
     """
-    Access and list the first State in the database.
+    Access and list all State objects that contain letter a.
     """
     db_engine = create_engine(db_url)
     session = sessionmaker(bind=db_engine)
 
     session = session()
 
-    filter_obj = session.query(State).order_by(State.id).first()
+    filter_objs = session.query(State).filter(State.name.contains('a'))
 
-    if filter_obj:
-        print("{}: {}".format(filter_obj.id, filter_obj.name))
-    else:
-        print("Nothing")
+    for obj in filter_objs:
+        print("{}: {}".format(obj.id, obj.name))
 
 
 if __name__ == "__main__":
@@ -34,4 +32,4 @@ if __name__ == "__main__":
         sys.argv[3]
     )
 
-    list_first(db_url)
+    list_states(db_url)
