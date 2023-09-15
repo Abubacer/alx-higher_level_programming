@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This is a script that prints all City objects
-from the database hbtn_0e_6_usa.
+from the database hbtn_0e_14_usa.
 """
 
 import sys
