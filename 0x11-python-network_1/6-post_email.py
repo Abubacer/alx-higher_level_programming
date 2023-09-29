@@ -13,7 +13,7 @@ if __name__ == "__main__":
     email = sys.argv[2]
     value = {'email': email}
 
-    response = requests.put(url, data=value)
+    response = requests.post(url, data=value)
     content = response.text
 
     print("{}".format(content))
