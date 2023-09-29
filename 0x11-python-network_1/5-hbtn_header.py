@@ -5,7 +5,7 @@ and displays the value of a variable found in the header of the response.
 """
 
 import sys
-from urllib import request
+import requests
 
 if __name__ == "__main__":
 
