@@ -9,7 +9,5 @@ const stringInput = process.argv[3];
 fs.writeFile(filePath, stringInput, 'utf8', (err) => {
   if (err) {
     console.error(err);
-  } else {
-    console.log(`${stringInput}`);
   }
 });
