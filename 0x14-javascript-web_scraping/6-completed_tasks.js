@@ -12,7 +12,7 @@ request(apiUrl, (err, response, body) => {
     const completedTasks = {};
 
     todosData.forEach((task) => {
-      if (completedTasks) {
+      if (task.completed) {
         if (completedTasks[task.userId]) {
           completedTasks[task.userId]++;
         } else {
