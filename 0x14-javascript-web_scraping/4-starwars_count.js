@@ -11,7 +11,7 @@ request(apiUrl, (err, response, body) => {
     const movieData = JSON.parse(body).results;
     const characterId = '18';
     const numberOfMovies = movieData.filter((movie) =>
-      movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)
+      movie.characters.some((apiUrl) => apiUrl.includes(characterId))
     );
     console.log(numberOfMovies.length);
   }
